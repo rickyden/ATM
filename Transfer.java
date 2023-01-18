@@ -15,6 +15,9 @@ public class Transfer extends Transaction
 
       // initialize references to keypad and deposit slot
       keypad = atmKeypad;
+      screen = getScreen();
+      bankdatabase = getBankDatabase();
+      
    } // end Deposit constructor
      
    public int getTargetAccount()
@@ -32,9 +35,19 @@ public class Transfer extends Transaction
        TargetAccount = keypad.getInput();
    }
    
+   public void setTargetAccount(int input)
+   {
+       TargetAccount = input;
+   }
+   
    public void setAmount()
    {
        amount = keypad.getDoubleInput();
+   }
+   
+   public void setAmount(double input)
+   {
+       amount = input;
    }
    
    public boolean TargetAccountExist()

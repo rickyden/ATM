@@ -95,6 +95,20 @@ public class BankDatabase
    {
       getAccount( userAccountNumber ).transferCredit( amount );
    }
+   
+   public boolean isSavingAccountOrCheque(int userAccountNumber)
+   {
+       int i = 0;
+       for(; i < accounts.length; i++){
+           if(accounts[i].getAccountNumber() == userAccountNumber)
+               break;
+       }
+       if(i%2 == 0)
+           return true;
+       else
+           return false;
+       //============================modified part=======================      
+   }
    // ==============================modified============================
 } // end class BankDatabase
 
